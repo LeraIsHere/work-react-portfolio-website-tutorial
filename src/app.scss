@@ -1,0 +1,23 @@
+@import "./global.scss";
+@import "./mixins.scss";
+
+.app{
+    height: 100vh;
+
+    .sections{
+        @include box(100%,calc(100vh - 70px));
+        background-color: lightsalmon;
+        @include rel-position(70px,auto,auto,auto);
+        scroll-behavior: smooth;
+        scroll-snap-type: y mandatory;
+        scrollbar-width: none; // for firefox
+        &::-webkit-scrollbar{
+            display: none;
+        }
+
+        > * {
+            @include box(100vw,calc(100vh - 70px));
+            scroll-snap-align: start;
+        }
+    }
+}

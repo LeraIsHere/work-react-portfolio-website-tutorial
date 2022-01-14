@@ -1,0 +1,37 @@
+@import "../../global.scss";
+@import "../../mixins.scss";
+
+.menu{
+    @include box(300px,100vh);
+    background-color: $mainColor;
+    @include fix-position(0,-300px,auto,auto);
+    z-index: 2;
+    @include flex(center,center);
+    flex-direction: column;
+    transition: all 1s ease;
+
+    &.active{
+        right: 0;
+    }
+
+    ul{
+        font-size: 30px;
+        font-weight: 300;
+        color: white;
+        width: 60%;
+
+        li{
+            margin-bottom: 20px;
+            a{
+                font-size: inherit;
+                color: inherit;
+            }
+
+            &:hover{
+                font-weight: 500;
+            }
+        }
+
+    }
+
+}
